@@ -1,0 +1,1 @@
+const onboardingBackground = 'assets/images/background_onboarding.png';
