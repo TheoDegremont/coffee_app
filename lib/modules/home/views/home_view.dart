@@ -3,6 +3,7 @@ import 'package:coffee_flutter/config/data/coffee_model.dart';
 import 'package:coffee_flutter/modules/detail_item/views/detail_item_view.dart';
 import 'package:coffee_flutter/utils/basic_utils.dart';
 import 'package:coffee_flutter/utils/widgets/custom_text.dart';
+import 'package:coffee_flutter/utils/widgets/home_searchbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -65,50 +66,7 @@ class HomeView extends StatelessWidget {
                     ))),
             Positioned(
               top: screenHeight * 0.2,
-              child: Container(
-                width: screenWidth * 0.8,
-                height: screenHeight * 0.08,
-                padding: EdgeInsets.only(
-                    left: screenWidth * 0.05, right: screenWidth * 0.012),
-                margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
-                decoration: BoxDecoration(
-                  color: darkGrey,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: screenHeight * 0.04,
-                      color: Colors.white,
-                    ),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: 'Search coffee',
-                            hintStyle: TextStyle(color: Colors.white),
-                            fillColor: Colors.white,
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.zero),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    Container(
-                      width: screenWidth * 0.16,
-                      height: screenHeight * 0.07,
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Icon(
-                        Icons.tune,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              child: HomeSearchbar(screenHeight: screenHeight, screenWidth: screenWidth)
             ),
             Positioned(
                 top: screenHeight * 0.3,
@@ -289,7 +247,10 @@ class HomeView extends StatelessWidget {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                          DetailItemView(itemSelected: coffeeList[index])));
+                                                            DetailItemView(
+                                                                itemSelected:
+                                                                    coffeeList[
+                                                                        index])));
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.symmetric(

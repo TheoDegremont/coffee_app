@@ -65,7 +65,7 @@ final List<CoffeeModel> coffeeList = [
       name: 'Americano',
       imagePath: 'assets/images/coffee_image.png',
       price: 3.99,
-      note: 5.0,
+      note: 4.5,
       description:
           'Caffè Americano or Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor'),
 ];

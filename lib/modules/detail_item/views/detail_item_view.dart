@@ -259,7 +259,7 @@ class DetailItemView extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => OrderViews()));
+                              builder: (context) => OrderViews(itemSelected: itemSelected,)));
                     },
                     child: Container(
                       height: screenHeight * 0.08,
