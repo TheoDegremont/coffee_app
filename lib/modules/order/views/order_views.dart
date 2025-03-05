@@ -152,7 +152,7 @@ class OrderViews extends StatelessWidget {
                             child: Row(
                               children: [
                                 Icon(
-                                  Icons.notes_rounded,
+                                  Icons.text_snippet_outlined,
                                   size: screenHeight * 0.02,
                                 ),
                                 CustomText.customTextBasic(
@@ -352,11 +352,79 @@ class OrderViews extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
+            padding: EdgeInsets.only(
+                left: screenWidth * 0.1,
+                right: screenWidth * 0.1,
+                top: screenHeight * 0.02,
+                bottom: screenHeight * 0.1),
             height: screenHeight * 0.25,
             decoration: BoxDecoration(
               color: primaryColor.withOpacity(0.1),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset('assets/images/money_icon.png'),
+                    SizedBox(width: screenWidth * 0.02),
+                    Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: grey.withOpacity(0.3),
+                        ),
+                        width: screenWidth * 0.3,
+                        height: screenHeight * 0.03,
+                        child: Row(
+                          children: [
+                            InkWell(
+                              child: Container(
+                                width: screenWidth * 0.15,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: primaryColor,
+                                ),
+                                child: CustomText.customTextBasic(
+                                    text: 'Cash',
+                                    fontSize: screenWidth * 0.03,
+                                    color: Colors.white),
+                              ),
+                            ),
+                            InkWell(
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: screenWidth * 0.15,
+                                child: CustomText.customTextBasic(
+                                    text: '\$ ${itemSelected.price + 1.0}',
+                                    fontSize: screenWidth * 0.03,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        )),
+                  ],
+                ),
+                InkWell(
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: screenWidth * 0.8,
+                    height: screenHeight * 0.07,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: CustomText.customTextBasic(
+                        text: 'Order',
+                        fontSize: screenWidth * 0.05,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )
+              ],
             ),
           ),
         )
